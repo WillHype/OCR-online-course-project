@@ -78,6 +78,28 @@
   margin: 12px 0px 12px 0px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
+.menu-restaurant .starters--style {
+  animation: slide-right 1000ms ease-in-out;
+}
+.menu-restaurant .starters--style:nth-child(1) {
+  animation-delay: 0s;
+}
+.menu-restaurant .starters--style:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.menu-restaurant .starters--style:nth-child(3) {
+  animation-delay: 0.6s;
+}
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .menu-restaurant .text-container {
   padding: 12px 30px 12px 20px;
 }
