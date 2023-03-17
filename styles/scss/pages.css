@@ -21,16 +21,20 @@
 
 .menu-restaurant__header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  position: relative;
 }
 .menu-restaurant__header .restaurant-prev__favicon {
   position: relative;
 }
+.menu-restaurant__header .header-container {
+  margin: auto;
+}
 .menu-restaurant__header .like-icon {
   cursor: pointer;
   position: absolute;
-  bottom: 50px;
-  left: 26px;
+  bottom: 47px;
+  left: 286px;
   font-size: 1.5em;
 }
 .menu-restaurant__header .fa-solid {
@@ -56,7 +60,6 @@
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   font-weight: 400;
-  text-align: center;
 }
 .menu-restaurant h3 {
   font-weight: 300;
@@ -72,22 +75,28 @@
   display: flex;
   justify-content: space-between;
   border-radius: 15px;
-  padding: 12px 30px 12px 20px;
   margin: 12px 0px 12px 0px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+.menu-restaurant .text-container {
+  padding: 12px 30px 12px 20px;
 }
 .menu-restaurant .starter-title {
   font-size: 18px;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-restaurant .starter-subtitle {
   font-size: 15px;
   font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-restaurant .starter-price {
   font-size: 15px;
   font-weight: 700;
-  padding-top: 22px;
+  padding: 34px 30px 0 0;
 }
 .menu-restaurant .menu-restaurant__order {
   display: flex;
@@ -110,6 +119,34 @@
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
   opacity: 0.8;
+}
+
+.price-container {
+  display: flex;
+}
+
+.menu-restaurant__checker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 0px;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  transition: right 0.5s, width 0.5s;
+}
+.menu-restaurant__checker .fa-solid.fa-circle-check {
+  font-size: 23px;
+  color: white;
+  opacity: 0;
+}
+.menu-restaurant__checker:hover {
+  right: calc(100% - 400px);
+  width: 59px;
+}
+.menu-restaurant__checker:hover .fa-solid.fa-circle-check {
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 @media screen and (min-width: 992px) {

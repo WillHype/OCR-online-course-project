@@ -20,15 +20,19 @@
 
 .menu-restaurant__header{
   display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    position: relative;
   .restaurant-prev__favicon{
     position: relative;
+  }
+  .header-container{
+    margin: auto;
   }
   .like-icon{
     cursor: pointer;
     position: absolute;
-    bottom: 50px;
-    left: 26px;
+    bottom: 47px;
+    left: 286px;
     font-size: 1.5em;
   }
   .fa-solid{
@@ -53,7 +57,6 @@
       font-family: 'Shrikhand', cursive;
       font-size: 28px;
       font-weight: 400;
-      text-align: center;
     }
     h3{
       font-weight: 300;
@@ -69,22 +72,29 @@
       display: flex;
       justify-content: space-between;
       border-radius: 15px;
-      padding: 12px 30px 12px 20px;
       margin: 12px 0px 12px 0px;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-container{
+      padding: 12px 30px 12px 20px;
     }
     .starter-title{
       font-size: 18px;
       font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .starter-subtitle{
       font-size: 15px;
       font-weight: 300;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .starter-price{
       font-size: 15px;
       font-weight: 700;
-      padding-top: 22px;
+      padding: 34px 30px 0 0;
     }
     .menu-restaurant__order{
       display: flex;
@@ -109,13 +119,34 @@
       }
     }
 }
-// .menu-restaurant__validator{
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: #99E2D0;
-//   height: 100%;
-// }
+.price-container{
+  display: flex;
+}
+.menu-restaurant__checker{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 0px;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  .fa-solid.fa-circle-check{
+    font-size: 23px;
+    color: white;
+    opacity: 0;
+  }
+  
+  &:hover{
+    right: calc(100% - 400px);
+    width: 59px;
+    .fa-solid.fa-circle-check{
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+  transition: right 0.5s, width 0.5s;
+}
+
 
 
 @media screen and (min-width:992px) {

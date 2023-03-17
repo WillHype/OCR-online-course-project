@@ -18,6 +18,71 @@ html a, body a {
   color: black;
 }
 
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+#loader {
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #99E2D0;
+  position: relative; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+  z-index: 1001;
+}
+
+#loader:before, #loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: #fff;
+  transform: rotate(0deg) translate(30px);
+  animation: rotate 1s ease infinite;
+}
+
+#loader:after {
+  animation-delay: 0.5s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg) translate(30px);
+  }
+}
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #9356DC;
+  z-index: 1000; /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+  transform: translateX(0); /* Firefox 16+, IE 10+, Opera */
+  transition: all 0.3s 1s ease-out;
+}
+
 .main-logo {
   height: 65px;
   display: flex;
@@ -135,6 +200,7 @@ header {
   height: fit-content;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 18px;
 }
 .restaurant-prev img {
   border-radius: 15px 15px 0 0;
@@ -186,8 +252,14 @@ header {
   font-size: 2em;
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  left: 285px;
+  left: -40px;
+}
+.restaurant-prev__caption .restaurant-prev__favicon {
+  position: relative;
+}
+
+.like-container {
+  display: flex;
 }
 
 footer {
