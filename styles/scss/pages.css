@@ -79,6 +79,17 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   animation: slide-right 1000ms ease-in-out;
 }
+.menu-restaurant .starters--style {
+  transition: all 1s;
+}
+.menu-restaurant .starters--style:hover .menu-restaurant__checker {
+  right: calc(100% - 400px);
+  width: 59px;
+}
+.menu-restaurant .starters--style:hover .menu-restaurant__checker .fa-solid.fa-circle-check {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
 @keyframes slide-right {
   from {
     opacity: 0;
@@ -90,19 +101,25 @@
   }
 }
 .menu-restaurant .text-container {
-  padding: 12px 30px 12px 20px;
+  padding: 12px 0px 12px 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu-restaurant .starter-title {
   font-size: 18px;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu-restaurant .starter-subtitle {
   font-size: 15px;
   font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 .menu-restaurant .starter-price {
   font-size: 15px;
@@ -150,14 +167,6 @@
   font-size: 23px;
   color: white;
   opacity: 0;
-}
-.menu-restaurant__checker:hover {
-  right: calc(100% - 400px);
-  width: 59px;
-}
-.menu-restaurant__checker:hover .fa-solid.fa-circle-check {
-  opacity: 1;
-  transition: opacity 0.5s;
 }
 
 @media screen and (min-width: 992px) {
